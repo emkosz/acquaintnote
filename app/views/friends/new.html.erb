@@ -1,0 +1,11 @@
+<h1>Create new contact</h1>
+
+<%= form_for @friend do |f| %>
+  <%= f.label "Name" %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label "Note" %>
+  <%= f.text_field :note %>
+  <br>
+  <%= f.submit "Save" %>
+<% end %>
