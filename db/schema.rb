@@ -11,13 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160223212249) do
+ActiveRecord::Schema.define(version: 20160303013503) do
 
   create_table "friends", force: :cascade do |t|
-    t.string   "name"
-    t.text     "note"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "first_name"
+    t.text     "description"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "last_name"
+    t.string   "phone_number"
+    t.string   "email"
+    t.string   "twitter_url"
+    t.string   "facebook_url"
   end
 
 end

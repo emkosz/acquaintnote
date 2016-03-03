@@ -20,6 +20,6 @@ class FriendsController < ApplicationController
 
   private
   def friend_params
-    params[:friend].permit(:name, :note)
+    params[:friend].permit(:first_name, :last_name, :description, :phone_number, :email, :twitter_url, :facebook_url)
   end
 end

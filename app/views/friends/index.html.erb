@@ -1,17 +1,27 @@
-<h1>Friends</h1>
+<h1>Contacts</h1>
 
 <h3><%= link_to "Create new contact ", friends_new_path %></h3>
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Note</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Description</th>
+    <th>Phone Number</th>
+    <th>Email</th>
+    <th>Twitter</th>
+    <th>Facebook</th>
   </tr>
 
   <% @friends.each do |friend| %>
     <tr>
-      <td><%= friend.name %></td>
-      <td><%= friend.note %></td>
+      <td><%= friend.first_name %></td>
+      <td><%= friend.last_name %></td>
+      <td><%= friend.description %></td>
+      <td><%= friend.phone_number %></td>
+      <td><%= friend.email %></td>
+      <td><%= link_to "Twitter", friend.twitter_url %></td>
+      <td><%= link_to "Facebook", friend.facebook_url %></td>
     </tr>
   <% end %>
 </table>
