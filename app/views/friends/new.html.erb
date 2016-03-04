@@ -1,25 +1,25 @@
 <h1>Create new contact</h1>
 
 <%= form_for @friend do |f| %>
-  <%= f.label "First Name" %>
+  <%= f.label :first_name %>
   <%= f.text_field :first_name %>
   <br>
-  <%= f.label "Last Name" %>
+  <%= f.label :last_name %>
   <%= f.text_field :last_name %>
   <br>
-  <%= f.label "Description" %>
+  <%= f.label :description %>
   <%= f.text_field :description %>
   <br>
-  <%= f.label "Phone number" %>
+  <%= f.label :phone_number %>
   <%= f.text_field :phone_number %>
   <br>
-  <%= f.label "Email Adress" %>
+  <%= f.label :email %>
   <%= f.text_field :email %>
   <br>
-  <%= f.label "Twitter" %>
+  <%= f.label :twitter_url %>
   <%= f.text_field :twitter_url %>
   <br>
-  <%= f.label "Facebook" %>
+  <%= f.label :facebook_url %>
   <%= f.text_field :facebook_url %>
   <br>
   <%= f.submit "Save" %>
