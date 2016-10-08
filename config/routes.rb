@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'static_pages#home'
-  get 'about'   =>    'static_pages#about'
-  get 'contact' =>    'static_pages#contact'
+  get 'about'     =>    'static_pages#about'
+  get 'contact'   =>    'static_pages#contact'
+  get 'friends'   =>    'friends#index'
+  get 'friends/new'       =>    'friends#new'
+  post 'friends'      =>    'friends#create'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
