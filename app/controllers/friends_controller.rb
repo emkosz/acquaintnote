@@ -2,7 +2,7 @@ class FriendsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @friends = Friend.all
+    @friends = current_user.friends
   end
 
   def new
@@ -11,6 +11,7 @@ class FriendsController < ApplicationController
 
   def create
     @friend = Friend.new(friend_params)
+    @friend.user = current_user
     if @friend.save
       flash[:success] = "Added new contact"
       redirect_to friends_path
