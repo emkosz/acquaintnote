@@ -11,6 +11,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def create
   #   super
   # end
+  
+  def update_email
+    @user = session["device_user_without_email"]
+  end
+  
+  def create_with_email
+    @user = session["device_user_without_email"]
+    @user.email = params["user"]["email"]
+    @user.save!
+    sign_up("user", @user)
+    respond_with @user, location: after_sign_up_path_for(@user)
+  end
 
   # GET /resource/edit
   # def edit

@@ -1,0 +1,17 @@
+<h2>Sign up with Twitter</h2>
+
+<p>    To sign up with Twitter, please also provide your email address.    </p>
+
+<%= form_for(@user, url: create_email_user_registration_path) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+
+<% end %>

@@ -1,14 +1,24 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
     omniauth_callbacks: "users/omniauth_callbacks",
+    registrations: "users/registrations",
     sessions: 'users/sessions'
   }
+  
+  devise_scope :user do
+    get '/users/update_email' => 'users/registrations#update_email', :as => "update_email_user_registration"
+    post '/users/create_with_email' => 'users/registrations#create_with_email', :as => "create_email_user_registration"
+  end
+  
+  
   root 'static_pages#home'
   get 'about'     =>    'static_pages#about'
   get 'contact'   =>    'static_pages#contact'
   get 'friends'   =>    'friends#index'
   get 'friends/new'       =>    'friends#new'
   post 'friends'      =>    'friends#create'
+  
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
