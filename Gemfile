@@ -15,6 +15,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'activerecord-session_store'
+gem 'twitter'
 
 group :development, :test do
   gem 'byebug'

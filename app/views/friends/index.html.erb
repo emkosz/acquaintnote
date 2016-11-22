@@ -1,5 +1,19 @@
 <h1>Friends</h1>
 
+<h5>Twitter friends</h5>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Twitter handle</th>
+  </tr>
+  <%= @twitter_friends.each do |tf| %>
+  <tr>
+    <td><%= tf.name %></td>
+    <td><%= tf.twitter_handle %></td>
+  </tr>
+</table>
+
+
 <h3><%= link_to "Add a new friend ", friends_new_path %></h3>
 
 <table>
@@ -13,7 +27,7 @@
     <th>Facebook</th>
   </tr>
 
-  <% @friends.each do |friend| %>
+  <%= @friends.each do |friend| %>
     <tr>
       <td><%= friend.first_name %></td>
       <td><%= friend.last_name %></td>

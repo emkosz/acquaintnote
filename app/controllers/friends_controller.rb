@@ -1,8 +1,12 @@
 class FriendsController < ApplicationController
+  require "twitter"
   before_action :authenticate_user!
 
   def index
     @friends = current_user.friends
+
+    user_id = current_user.uid.to_i
+    @twitter_friends = TwitterFriendsCollector.new.create_twitter_friends(current_user, user_id)
   end
 
   def new
