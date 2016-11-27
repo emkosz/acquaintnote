@@ -15,6 +15,12 @@ class FriendsController < ApplicationController
 
   def new
     @friend = Friend.new
+    if params[:twitter_handle]
+      handle = params[:twitter_handle]
+      @friend.twitter_url = "https://twitter.com/#{handle}"
+      twitter_friend = TwitterFriend.find_by(user: current_user, twitter_handle: handle)
+      @friend.first_name = twitter_friend.name
+    end
   end
 
   def create
