@@ -1,12 +1,26 @@
 class FriendsController < ApplicationController
+  require "twitter"
   before_action :authenticate_user!
 
   def index
     @friends = current_user.friends
+
+    @twitter_friends = current_user.twitter_friends.order('created_at DESC').all[0..5]
+  end
+  
+  def refresh_twitter
+    TwitterFriendsCollector.new.create_twitter_friends(current_user)
+    redirect_to friends_path
   end
 
   def new
     @friend = Friend.new
+    if params[:twitter_handle]
+      handle = params[:twitter_handle]
+      @friend.twitter_url = "https://twitter.com/#{handle}"
+      twitter_friend = TwitterFriend.find_by(user: current_user, twitter_handle: handle)
+      @friend.first_name = twitter_friend.name
+    end
   end
 
   def create

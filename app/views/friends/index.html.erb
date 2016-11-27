@@ -1,5 +1,22 @@
 <h1>Friends</h1>
 
+<h5>Twitter friends</h5>
+<%=button_to "refresh", friends_refresh_twitter_path %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Twitter handle</th>
+  </tr>
+  <% @twitter_friends.each do |tf| %>
+  <tr>
+    <td><%= tf.name %></td>
+    <td><%= tf.twitter_handle %></td>
+    <td><%= link_to "Add friend", friends_new_path(twitter_handle: tf.twitter_handle) %>
+  </tr>
+  <% end %>
+</table>
+
+
 <h3><%= link_to "Add a new friend ", friends_new_path %></h3>
 
 <table>
