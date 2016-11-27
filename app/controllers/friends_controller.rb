@@ -35,6 +35,17 @@ class FriendsController < ApplicationController
     end
   end
 
+  def edit
+    @friend = Friend.find(params[:id])
+  end
+
+  def update
+    @friend = Friend.find(params[:id])
+    if @friend.update_attributes(friend_params)
+      redirect_to friends_path
+    end
+  end
+
   private
   def friend_params
     params[:friend].permit(:first_name, :last_name, :description, :phone_number, :email, :twitter_url, :facebook_url)

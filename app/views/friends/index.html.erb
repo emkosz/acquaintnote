@@ -39,6 +39,7 @@
       <td><%= friend.email %></td>
       <td><%= link_to "Twitter", friend.twitter_url %></td>
       <td><%= link_to "Facebook", friend.facebook_url %></td>
+      <td><%= link_to "Edit", edit_friend_path(id: friend.id) %><td>
     </tr>
   <% end %>
 </table>

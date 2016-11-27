@@ -14,12 +14,14 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   get 'about'     =>    'static_pages#about'
   get 'contact'   =>    'static_pages#contact'
+
   get 'friends'   =>    'friends#index'
   post 'friends/refresh_twitter'   =>    'friends#refresh_twitter'
   get 'friends/new'       =>    'friends#new'
   post 'friends'      =>    'friends#create'
+  get 'friends/:id/edit' => 'friends#edit', as: "edit_friend"
+  put 'friends/:id' => 'friends#update', as: "save_friend"
   
-
 
 
   # The priority is based upon order of creation: first created -> highest priority.
