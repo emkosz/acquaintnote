@@ -5,8 +5,12 @@ class FriendsController < ApplicationController
   def index
     @friends = current_user.friends
 
-    user_id = current_user.uid.to_i
-    @twitter_friends = TwitterFriendsCollector.new.create_twitter_friends(current_user, user_id)
+    @twitter_friends = current_user.twitter_friends.order('created_at DESC').all[0..5]
+  end
+  
+  def refresh_twitter
+    TwitterFriendsCollector.new.create_twitter_friends(current_user)
+    redirect_to friends_path
   end
 
   def new

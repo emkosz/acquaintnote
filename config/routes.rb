@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'about'     =>    'static_pages#about'
   get 'contact'   =>    'static_pages#contact'
   get 'friends'   =>    'friends#index'
+  post 'friends/refresh_twitter'   =>    'friends#refresh_twitter'
   get 'friends/new'       =>    'friends#new'
   post 'friends'      =>    'friends#create'
   
