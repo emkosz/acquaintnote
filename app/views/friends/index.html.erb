@@ -1,45 +1,49 @@
-<h1>Friends</h1>
 
-<h5>Twitter friends</h5>
-<%=button_to "refresh", friends_refresh_twitter_path %>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Twitter handle</th>
-  </tr>
-  <% @twitter_friends.each do |tf| %>
-  <tr>
-    <td><%= tf.name %></td>
-    <td><%= tf.twitter_handle %></td>
-    <td><%= link_to "Add friend", friends_new_path(twitter_handle: tf.twitter_handle) %>
-  </tr>
-  <% end %>
-</table>
-
-
-<h3><%= link_to "Add a new friend ", friends_new_path %></h3>
-
-<table>
-  <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Description</th>
-    <th>Phone Number</th>
-    <th>Email</th>
-    <th>Twitter</th>
-    <th>Facebook</th>
-  </tr>
-
-  <% @friends.each do |friend| %>
+<div class="wrapper">
+  <h1>Friends</h1>
+  <h5>Twitter friends</h5>
+  <%=button_to "refresh", friends_refresh_twitter_path %>
+  <table class="table">
     <tr>
-      <td><%= friend.first_name %></td>
-      <td><%= friend.last_name %></td>
-      <td><%= friend.description %></td>
-      <td><%= friend.phone_number %></td>
-      <td><%= friend.email %></td>
-      <td><%= link_to "Twitter", friend.twitter_url %></td>
-      <td><%= link_to "Facebook", friend.facebook_url %></td>
-      <td><%= link_to "Edit", edit_friend_path(id: friend.id) %><td>
+      <th>Name</th>
+      <th>Twitter handle</th>
+      <th>Twitter bio</th>
     </tr>
-  <% end %>
-</table>
+    <% @twitter_friends.each do |tf| %>
+    <tr>
+      <td><%= tf.name %></td>
+      <td><%= tf.twitter_handle %></td>
+      <td>Bio</td>
+      <td><%= link_to "Add friend", friends_new_path(twitter_handle: tf.twitter_handle) %>
+    </tr>
+    <% end %>
+  </table>
+
+
+  <h3><%= link_to "Add a new friend ", friends_new_path %></h3>
+
+  <table class="table">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Description</th>
+      <th>Phone Number</th>
+      <th>Email</th>
+      <th>Twitter</th>
+      <th>Facebook</th>
+    </tr>
+
+    <% @friends.each do |friend| %>
+      <tr>
+        <td><%= friend.first_name %></td>
+        <td><%= friend.last_name %></td>
+        <td><%= friend.description %></td>
+        <td><%= friend.phone_number %></td>
+        <td><%= friend.email %></td>
+        <td><%= link_to "Twitter", friend.twitter_url %></td>
+        <td><%= link_to "Facebook", friend.facebook_url %></td>
+        <td><%= link_to "Edit", edit_friend_path(id: friend.id) %><td>
+      </tr>
+    <% end %>
+  </table>
+</div>
