@@ -7,12 +7,15 @@ class FriendsController < ApplicationController
   end
 
   def recent_friends
-    @twitter_friends = current_user.twitter_friends.order('created_at DESC').all[0..5]
+    @twitter_friends = current_user.twitter_friends.order('created_at DESC').all[0..10]
+    if @twitter_friends.count == 0
+      @twitter_friends = TwitterFriendsCollector.new.create_twitter_friends(current_user)
+    end
   end
 
   def refresh_twitter
     TwitterFriendsCollector.new.create_twitter_friends(current_user)
-    redirect_to friends_path
+    redirect_to recent_friends_path
   end
 
   def new
@@ -22,6 +25,7 @@ class FriendsController < ApplicationController
       @friend.twitter_url = "https://twitter.com/#{handle}"
       twitter_friend = TwitterFriend.find_by(user: current_user, twitter_handle: handle)
       @friend.first_name = twitter_friend.name
+      @friend.description = twitter_friend.twitter_bio
     end
   end
 

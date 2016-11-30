@@ -10,6 +10,7 @@ class TwitterFriendsCollector
       twitter_friend = TwitterFriend.find_or_create_by(twitter_handle: friend.screen_name)
       twitter_friend.user = current_user
       twitter_friend.name = friend.name
+      twitter_friend.twitter_bio = friend.description
       # twitter_friend.uid = friend.id_str
       twitter_friend.save
       twitter_friends_array << twitter_friend

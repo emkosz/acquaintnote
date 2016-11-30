@@ -15,8 +15,8 @@
     <tr>
       <td><%= tf.name %></td>
       <td><%= tf.twitter_handle %></td>
-      <td>Bio</td>
-      <td><%= button_to "Add friend", friends_new_path(twitter_handle: tf.twitter_handle), class: "btn btn-info btn-xs" %></td>
+      <td><%= tf.twitter_bio %></td>
+      <td><%= link_to "Add friend", friends_new_path(twitter_handle: tf.twitter_handle), class: "btn btn-info btn-xs", method: :get %></td>
     </tr>
     <% end %>
   </table>
