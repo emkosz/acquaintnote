@@ -6,22 +6,33 @@ HEADER
 *******************/
 
 .header-cont {
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  position: fixed;
-  top: 0px;
+}
+
+.header-cont > * {
+  padding-bottom: 2px;
+  padding-left: 10px;
 }
 
 header {
+  position: relative;
 	height: 50px;
 	background: turquoise;
 	border: 1px solid #CCC;
-  width: 960px;
+  width: 100%;
 	margin: 0px auto;
+  top: 0px ;
 }
 
 /*******************
 LOGO
 *******************/
+
+header ul {
+  list-style: none;
+}
 
 #logo {
 	float: left;
@@ -30,7 +41,6 @@ LOGO
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding-top: 9px;
   font-weight: bold;
 }
 
@@ -42,15 +52,18 @@ LOGO
 NAVIGATION
 *******************/
 
-nav {}
+header nav {
+  float: right;
+}
 
 nav ul {
 	list-style: none;
+  margin: 0;
 }
 
 nav li {
 	display: inline-block;
-  text-align: right;
+  padding-bottom: 0;
 }
 
 nav a {
@@ -58,7 +71,6 @@ nav a {
 	padding: 15px 10px;
 	color: #fff;
 	text-transform: uppercase;
-  text-align: right;
 }
 
 nav a:hover {
@@ -73,14 +85,18 @@ FOOTER
 
 .footer-cont {
   widht: 100%;
-  postion: fixed;
   bottom: 0px;
   left: 0;
 }
 
+.footer-cont > * {
+  padding-top: 20px;
+  padding-left: 10px;
+}
+
 footer {
 	height: 50px;
-  width: 960px;
+  width: 100%;
   margin: 0px auto;
 	font-size: 0.75em;
   text-align: center;
