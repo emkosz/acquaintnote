@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   post 'friends'      =>    'friends#create'
   get 'friends/:id/edit' => 'friends#edit', as: "edit_friend"
   put 'friends/:id' => 'friends#update', as: "save_friend"
+
+  get 'friends/recent' => 'friends#recent_friends', as: "recent_friends"
   
 
 

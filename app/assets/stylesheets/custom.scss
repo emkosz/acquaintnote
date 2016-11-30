@@ -2,87 +2,106 @@
 @import "bootstrap";
 
 /*******************
-GENERAL
-*******************/
-
-.wrapper {
-	padding: 80px 0 0 0;
-	margin: 40 0 0 40px;
-	max-width: 800px;
-  margin: 0 auto;
-  padding: 0 5%;
-}
-
-.wrapper h1 {
-	text-align: center;
-}
-
-h1 {
-	color: gray;
-	padding: 0 0 20px 0;
-}
-
-a {
-	text-decoration: none;
-}
-
-/*******************
 HEADER
 *******************/
 
+.header-cont {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.header-cont > * {
+  padding-bottom: 2px;
+  padding-left: 10px;
+}
 
 header {
-	float: left;
-	margin: 0 0 40px 0;
-	padding: 5px 0 0 0;
-	width: 100%;
-	background-color: pink;
-	border-color: navy;
+  position: relative;
+	height: 50px;
+	background: turquoise;
+	border: 1px solid #CCC;
+  width: 100%;
+	margin: 0px auto;
+  top: 0px ;
+}
+
+/*******************
+LOGO
+*******************/
+
+header ul {
+  list-style: none;
 }
 
 #logo {
-	
+	float: left;
+	overflow: auto;
+  font-size: 1.3em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
 }
 
+#logo:hover {
+	text-decoration: none;
+}
 
 /*******************
 NAVIGATION
 *******************/
 
-nav {
-	text-align: center;
-	padding: 10px;
-	margin: 20px 0 0;
+header nav {
+  float: right;
 }
 
 nav ul {
 	list-style: none;
-	margin: 0 10px;
-	padding: 0;
+  margin: 0;
 }
 
 nav li {
 	display: inline-block;
+  padding-bottom: 0;
 }
 
 nav a {
-	font-weight: 800;
+	font-weight: 600;
 	padding: 15px 10px;
+	color: #fff;
+	text-transform: uppercase;
 }
 
+nav a:hover {
+	text-decoration: none;
+	color: #fff;
+}
 
 
 /*******************
 FOOTER
 *******************/
 
+.footer-cont {
+  widht: 100%;
+  bottom: 0px;
+  left: 0;
+}
+
+.footer-cont > * {
+  padding-top: 20px;
+  padding-left: 10px;
+}
+
 footer {
-	font-size: 0.95em;
-	text-align: center;
-	clear: both;
-	padding-top: 20px;
-	color: #000;
-	background-color: pink;
+	height: 50px;
+  width: 100%;
+  margin: 0px auto;
+	font-size: 0.75em;
+  text-align: center;
+	background: turquoise;
+  border: 1px solid #CCC;
 }
 
 /*******************
@@ -100,11 +119,39 @@ PAGE: HOME
 
 
 /*******************
+GENERAL
+*******************/
+
+.wrapper {
+  background: #FCFCFC;
+  margin: 0 0;
+  padding: 40px 5%;
+  height: auto;
+}
+
+.wrapper h1 {
+  margin: 0;
+}
+
+
+h1, h2 {
+  color: gray;
+  padding: 0 0 20px 0;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+body {
+}
+
+
+/*******************
 PAGE: CONTACT
 *******************/
 
-.contact-info {
-	
-}
+.contact-info {}
 
 

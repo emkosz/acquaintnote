@@ -1,0 +1,23 @@
+<div class="wrapper">
+  <h1>Add friends from social media</h1>
+
+  <h2>Twitter friends 
+    <span style="display: inline-block;"><%= button_to "refresh", friends_refresh_twitter_path, class: "btn btn-info btn-xs" %></h2>
+  
+  <table class="table table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Twitter handle</th>
+      <th>Twitter bio</th>
+      <th>Add friend</th>
+    </tr>
+    <% @twitter_friends.each do |tf| %>
+    <tr>
+      <td><%= tf.name %></td>
+      <td><%= tf.twitter_handle %></td>
+      <td>Bio</td>
+      <td><%= button_to "Add friend", friends_new_path(twitter_handle: tf.twitter_handle), class: "btn btn-info btn-xs" %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
