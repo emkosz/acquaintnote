@@ -1,28 +1,7 @@
 
 <div class="wrapper">
   <h1>Friends</h1>
-  <h5>Twitter friends</h5>
-  <%=button_to "refresh", friends_refresh_twitter_path %>
-  <table class="table">
-    <tr>
-      <th>Name</th>
-      <th>Twitter handle</th>
-      <th>Twitter bio</th>
-    </tr>
-    <% @twitter_friends.each do |tf| %>
-    <tr>
-      <td><%= tf.name %></td>
-      <td><%= tf.twitter_handle %></td>
-      <td>Bio</td>
-      <td><%= link_to "Add friend", friends_new_path(twitter_handle: tf.twitter_handle) %>
-    </tr>
-    <% end %>
-  </table>
-
-
-  <h3><%= link_to "Add a new friend ", friends_new_path %></h3>
-
-  <table class="table">
+  <table class="table table-striped">
     <tr>
       <th>First Name</th>
       <th>Last Name</th>
@@ -46,4 +25,6 @@
       </tr>
     <% end %>
   </table>
+  <h4><%= link_to "Add a new friend ", friends_new_path %></h4>
+  <h4><%= link_to "Add friend from social media ", recent_friends_path %></h4>
 </div>
