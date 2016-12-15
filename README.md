@@ -1,2 +1,2 @@
-# acquaintnote
-Create notes about new acquaintance
+# matememo
+Make memos on mates, stay connected
